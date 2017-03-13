@@ -25,7 +25,13 @@ let languages = {
   Celtic: ["Welsh", "Irish", "Breton"],
   AfroAsiatic: ["Hebrew", "Somali", "Oromo"]
 };
+let otherLanguages = {
+  isolates: [ 'Korean', 'Basque' ],
+  Germanic: [ 'Swedish', 'Danish', 'English' ]
+};
 
+let moreLanguages = Object.assign(languages, otherLanguages);
+console.log(moreLanguages);
 //Write task #1 code below
 
 
@@ -58,6 +64,8 @@ function Husky() {
 
 // TODO: Use Object.create() in order to extend the superclass with the subclass
 //write code here
+Husky.prototype = Object.create(Dog.prototype);
+Husky.prototype.constructor = Husky;
 
 var fido = new Husky();
 
